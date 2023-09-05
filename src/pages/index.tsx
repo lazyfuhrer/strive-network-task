@@ -141,7 +141,7 @@ export default function Home() {
               <Input placeholder='Optional' />
             </FormControl>
             <Center>
-              <Button mt={10} bg={"rgba(2, 170, 176, 1)"} w={'186px'}>Submit</Button>
+              <Button variant="unstyled" mt={10} bg={"rgba(2, 170, 176, 1)"} w={'186px'}>Submit</Button>
             </Center>
           </TabPanel>
         </TabPanels>
