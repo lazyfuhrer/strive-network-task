@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Box, Button, ButtonGroup, Center, CloseButton, Flex, FormControl, Grid, GridItem, Heading, Image, Input, InputGroup, InputRightElement, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react";
+import { Alert, AlertIcon, Box, Button, ButtonGroup, CloseButton, Flex, Image, Input, InputGroup, InputRightElement, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react";
 
 export default function Utility() {
   const { isOpen: isVisible, onClose } = useDisclosure({ defaultIsOpen: true });
@@ -50,39 +50,39 @@ export default function Utility() {
             <Stack mt={10} direction={{ base: 'column', md: 'row' }} spacing={5}>
                 <Box flex={1} minW="0">
                     <Box p={4} w="100%" h="auto" bg={'rgba(2, 170, 176, 0.1)'} borderRadius={'16px'}>
-                    <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Utility Name</Text>
-                    <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>MAYC#41135601</Text>
+                        <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Utility Name</Text>
+                        <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>MAYC#41135601</Text>
                     </Box>
 
                     <Box mt={5} p={4} w="100%" h="auto" bg={'rgba(2, 170, 176, 0.1)'} borderRadius={'16px'}>
-                    <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Utility Name</Text>
-                    <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit...</Text>
+                        <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Utility Name</Text>
+                        <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit...</Text>
                     </Box>
 
                     <Box mt={8} w="100%" h="auto" borderRadius={'16px'} >
-                    <InputGroup size='lg'>
-                        <Input placeholder='Redirection URL' />
-                        <InputRightElement>
-                        <Image src="/icons/edit.svg" alt="external link" />
-                        </InputRightElement>
-                    </InputGroup>
+                        <InputGroup size='lg'>
+                            <Input placeholder='Redirection URL' />
+                            <InputRightElement>
+                            <Image src="/icons/edit.svg" alt="external link" />
+                            </InputRightElement>
+                        </InputGroup>
                     </Box>
                 </Box>
 
                 <Box flex={1} minW="0">
                     <Box p={4} w="100%" h="auto" bg={'rgba(2, 170, 176, 0.1)'} borderRadius={'16px'}>
-                    <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Redeemable Type</Text>
-                    <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Multiple Utility</Text>
+                        <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Redeemable Type</Text>
+                        <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Multiple Utility</Text>
                     </Box>
 
                     <Box mt={5} p={4} w="100%" h="auto" bg={'rgba(2, 170, 176, 0.1)'} borderRadius={'16px'}>
-                    <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Expirable Type</Text>
-                    <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Non-Expirable</Text>
+                        <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Expirable Type</Text>
+                        <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Non-Expirable</Text>
                     </Box>
 
                     <Box mt={5} mb={10} p={4} w="100%" h="auto" bg={'rgba(2, 170, 176, 0.1)'} borderRadius={'16px'}>
-                    <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Category</Text>
-                    <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Lorem ipsum</Text>
+                        <Text fontSize={'14px'} fontWeight={600} color={'rgba(2, 170, 176, 1)'}>Category</Text>
+                        <Text mt={2} fontSize={'20px'} fontWeight={500} color={'rgba(255, 255, 255, 0.8)'}>Lorem ipsum</Text>
                     </Box>
                 </Box>
             </Stack>
