@@ -18,25 +18,19 @@ import {
   FlexProps,
   Menu,
   MenuButton,
+  Image,
 } from '@chakra-ui/react'
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-} from 'react-icons/fi'
-import { IconType } from 'react-icons'
+import { FiMenu } from 'react-icons/fi'
+
+import { Profile, Bell, Fire, Rocket, Analytics, LogOut, Plus, BellColored } from '@/icons/Profile'
 
 interface LinkItemProps {
   name: string
-  icon: IconType
+  icon: any
 }
 
 interface NavItemProps extends FlexProps {
-  icon: IconType
+  icon: any
   children: React.ReactNode
 }
 
@@ -49,13 +43,13 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Profile', icon: FiHome },
-  { name: 'Push Notifications', icon: FiTrendingUp },
-  { name: 'Gas Fee', icon: FiCompass },
-  { name: 'Utilities Launchpad', icon: FiStar },
-  { name: 'Add Utility', icon: FiSettings },
-  { name: 'Analytics', icon: FiSettings },
-  { name: 'Logout', icon: FiSettings },
+  { name: 'Profile', icon: Profile },
+  { name: 'Push Notifications', icon: Bell },
+  { name: 'Gas Fee', icon: Fire },
+  { name: 'Utilities Launchpad', icon: Rocket },
+  { name: 'Add Utility', icon: Plus },
+  { name: 'Analytics', icon: Analytics },
+  { name: 'Logout', icon: LogOut },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -76,7 +70,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h={{base: '20', md: '5'}} alignItems="center" mx="8" justifyContent="space-between">
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton color={'rgba(2, 170, 176, 1)'} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
@@ -107,6 +101,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {...rest}>
         {icon && (
           <Icon
+            //color={'linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%)'}
             mr="4"
             fontSize="16"
             _groupHover={{
@@ -138,6 +133,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       {...rest}
     >
         <IconButton
+          color={'rgba(2, 170, 176, 1)'}
           display={{ base: "flex", md: "none" }}
           onClick={onOpen}
           variant="outline"
@@ -145,7 +141,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           icon={<FiMenu />}
         />
   
-        <Text
+        <Box
           flex={1}
           display="flex"
           fontSize="2xl"
@@ -154,15 +150,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           ml={5}
           justifySelf="flex-start"
         >
-          Logo
-        </Text>
+          <Image src='/icons/strive-icon.svg'/>
+        </Box>
 
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
           <IconButton
+            color={'rgba(2, 170, 176, 1)'}
             size="lg"
             variant="ghost"
             aria-label="open menu"
-            icon={<FiBell />}
+            icon={<BellColored />}
           />
           <Flex alignItems={"center"}>
             <Menu>
@@ -180,7 +177,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                     spacing="1px"
                     ml="2"
                   >
-                    <Text fontSize="sm">Justina Clark</Text>
+                    <Text fontSize="sm" fontWeight={600}>23741....awo83</Text>
                   </VStack>
                 </HStack>
               </MenuButton>
