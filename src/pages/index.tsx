@@ -1,5 +1,8 @@
 import { Box, Button, Center, Flex, FormControl, FormLabel, Input, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea } from "@chakra-ui/react";
+import { Exo } from "next/font/google";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+
+const exo = Exo({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -41,6 +44,7 @@ export default function Home() {
             </FormControl>
           </TabPanel>
           <TabPanel mt={{base: '0', md: '10'}}>
+            <main className={exo.className}> 
             <Flex
               mt={{ base: '12', md: '0' }}
               direction={{ base: 'column', md: 'row' }}
@@ -125,6 +129,7 @@ export default function Home() {
                 </Box>
               </Box>
             </Flex>
+            </main> 
           </TabPanel>
 
           <TabPanel>

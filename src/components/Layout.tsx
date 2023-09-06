@@ -18,10 +18,6 @@ import {
   FlexProps,
   Menu,
   MenuButton,
-  Input,
-  Spacer,
-  InputLeftElement,
-  InputGroup
 } from '@chakra-ui/react'
 import {
   FiHome,
@@ -31,7 +27,6 @@ import {
   FiSettings,
   FiMenu,
   FiBell,
-  FiSearch
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 
@@ -66,15 +61,20 @@ const LinkItems: Array<LinkItemProps> = [
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
+      position="fixed"
+      top={0}
+      left={0}
+      bottom={0}
+      zIndex={10}
       transition="3s ease"
       bg="#0A0C17"
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
       w={{ base: 'full', md: 60 }}
-      pos="fixed"
       h="100vh"
       mt={{ base: 0, md: 20 }}
-      {...rest}>
+      {...rest}
+    >
       <Flex h={{base: '20', md: '5'}} alignItems="center" mx="8" justifyContent="space-between">
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -124,15 +124,19 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     return (
       <Flex
-        px={{ base: 4, md: 4 }}
-        height="20"
-        alignItems="center"
-        bg="#0A1E2F"
-        justifyContent={{ base: "space-between", md: "flex-end" }}
-        borderBottomWidth="1px"
-        // borderBottomColor={useColorModeValue("#0A0C17", "#0A1E2F")}
-        {...rest}
-      >
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
+      zIndex={10}
+      px={{ base: 4, md: 4 }}
+      height="20"
+      alignItems="center"
+      bg="#0A1E2F"
+      justifyContent={{ base: 'space-between', md: 'flex-end' }}
+      borderBottomWidth="1px"
+      {...rest}
+    >
         <IconButton
           display={{ base: "flex", md: "none" }}
           onClick={onOpen}
@@ -152,15 +156,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         >
           Logo
         </Text>
-  
-        <Box flex={1}>
-            <InputGroup>
-                <InputLeftElement pointerEvents="none" fontSize={'20px'} alignSelf="center" p={3}>
-                <FiSearch color="gray.300"/>
-                </InputLeftElement>
-                <Input size="md" borderRadius={20} placeholder="Search Collections, Utilities and NFT's" />
-            </InputGroup>
-        </Box>
 
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
           <IconButton
@@ -216,7 +211,7 @@ export default function Layout ({ children } : any) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: 0, md: 60 }} mt={20} p="4">
         {children}
       </Box>
     </Box>
