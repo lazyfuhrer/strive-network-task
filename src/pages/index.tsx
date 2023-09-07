@@ -7,10 +7,10 @@ const exo = Exo({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Flex justify={'center'} mt={10}>
+      <Flex justify={'center'} p={20}>
       <Tabs
-        w={'638px'}
-        h={'full'}
+        w={'738px'}
+        minH={'500px'}
         bg={'rgba(10, 12, 23, 1)'}
         border={'1px'}
         borderRadius={'16px'}
@@ -18,10 +18,10 @@ export default function Home() {
         size={'md'}
       >
         <Box>
-          <TabList gap={'35px'}>
-            <Tab fontSize={"16px"} fontWeight={600}>Collection Info</Tab>
-            <Tab fontSize={"16px"} fontWeight={600}>Upload</Tab>
-            <Tab fontSize={"16px"} fontWeight={600}>Details</Tab>
+          <TabList gap={{base: '25px', md: '35px'}}>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Collection Info</Tab>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Upload</Tab>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Details</Tab>
           </TabList>
         </Box>
 
@@ -43,7 +43,7 @@ export default function Home() {
               />
             </FormControl>
           </TabPanel>
-          <TabPanel mt={{base: '0', md: '10'}}>
+          <TabPanel mt={{base: '0', md: '16'}}>
             <main className={exo.className}> 
             <Flex
               mt={{ base: '12', md: '0' }}
@@ -84,9 +84,9 @@ export default function Home() {
                   padding="16px"
                 >
                   <Center flexDirection={"column"} w={{ base: '100%', md: '100%' }} h="250px" borderRadius={'12px'} border="2px dashed rgba(47, 128, 236, 1)">
-                    <Text mb={2} fontSize={{ base: '12px', md: '16px' }}>Drag or Drop files here</Text>
-                    <Text mb={2} fontSize={{ base: '10px', md: '12px' }}>OR</Text>
-                    <Button fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} leftIcon={<AiOutlinePlusCircle />} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
+                    <Text mb={2} fontSize={{ base: '12px', md: '16px' }} color={'rgba(47, 128, 236, 1)'}>Drag or Drop files here</Text>
+                    <Text mb={2} fontSize={{ base: '10px', md: '12px' }} color={'rgba(47, 128, 236, 1)'}>OR</Text>
+                    <Button display="flex" alignItems={'center'} fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} leftIcon={<AiOutlinePlusCircle />} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
                   </Center>
                 </Box>
               </Box>
@@ -122,9 +122,9 @@ export default function Home() {
                   padding="16px"
                 >
                   <Center flexDirection={"column"} w={{ base: '100%', md: '100%' }} h="250px" borderRadius={'12px'} border="2px dashed rgba(47, 128, 236, 1)">
-                    <Text mb={2} fontSize={{ base: '12px', md: '16px' }}>Drag or Drop files here</Text>
-                    <Text mb={2} fontSize={{ base: '10px', md: '12px' }}>OR</Text>
-                    <Button fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} leftIcon={<AiOutlinePlusCircle />} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
+                    <Text mb={2} fontSize={{ base: '12px', md: '16px' }} color={'rgba(47, 128, 236, 1)'}>Drag or Drop files here</Text>
+                    <Text mb={2} fontSize={{ base: '10px', md: '12px' }} color={'rgba(47, 128, 236, 1)'}>OR</Text>
+                    <Button display="flex" alignItems={'center'}  fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} leftIcon={<AiOutlinePlusCircle/>} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
                   </Center>
                 </Box>
               </Box>

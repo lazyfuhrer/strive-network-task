@@ -1,18 +1,19 @@
 import { Exo } from 'next/font/google';
-import { Box, Button, Center, Divider, Flex, FormControl, FormLabel, Heading, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, FormControl, Icon, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
 import { CloseIcon, InfoIcon } from '@chakra-ui/icons'; 
 import { IoIosArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { FiUpload } from 'react-icons/fi';
 
 const exo = Exo({ subsets: ['latin'] })
 
 export default function Privilege() {
   return (
     <>
-      <Flex justify={'center'} mt={10}> 
+      <Flex justify={'center'} pt={10}> 
       <Tabs
-        w={'638px'}
-        h={'full'}
+        w={{base: '350px', md: '550px'}}
+        minH={'500px'}
         bg={'rgba(10, 12, 23, 1)'}
         border={'1px'}
         borderRadius={'16px'}
@@ -27,7 +28,7 @@ export default function Privilege() {
         <Divider />
         <Box p={'8'}>
             <Box>
-            <TabList gap={'35px'}>
+            <TabList gap={{base: '25px', md: '35px'}}>
                 <Tab fontSize={"12px"} fontWeight={600}>Utility Info</Tab>
                 <Tab fontSize={"12px"} fontWeight={600}>Upload</Tab>
                 <Tab fontSize={"12px"} fontWeight={600}>Redeemable Type</Tab>
@@ -46,33 +47,36 @@ export default function Privilege() {
                     rows={5}
                     />
                 </FormControl>
-                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf="flex-end">
+                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf={{base: 'center', md: 'flex-end'}}>
                     Next
                 </Button>
             </TabPanel>
 
-            <TabPanel mt={3}>
+            <TabPanel mt={4}>
                 <main className={exo.className}>
-                    <Flex justifyContent="center" alignItems="center" h={{base: '300px', md: '360px'}}>
-                        <Box display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"} borderRadius={'24px'} w={{base: '310px', md: '400px'}} h={{base: '300px', md: '360px'}} textAlign="center" style={{
+                    <Flex justifyContent="center" alignItems="center" h={{base: '300px', md: '320px'}}>
+                        <Box display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"} borderRadius={'24px'} w={{base: '310px', md: '360px'}} h={{base: '300px', md: '340px'}} textAlign="center" style={{
                             background: `
                             linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),
                             linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
                             `,
                         }}>
-                            <Text fontSize={'24px'} fontWeight={600}>Upload your file</Text>
+                            <Flex>
+                                <Icon as={FiUpload} w={{base: '25px', md: '29px'}} h={{base: '25px', md: '29px'}} mr={{base: '10px', md: '15px'}}/>
+                                <Text fontSize={{base: '18px', md: '20px'}} fontWeight={600}>Upload your file</Text>
+                            </Flex>
                             <Box border="2px dashed rgba(47, 128, 236, 1)" mt={6} mx={'auto'} width={'80%'} h={'140px'} borderRadius={'24px'} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                                <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={'16px'} fontWeight={500}>Drag or Drop files here</Text>
-                                <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={'12px'} fontWeight={500}>OR</Text>
-                                <Button variant={"unstyled"} w={'128px'} h={'35px'} leftIcon={<AiOutlinePlusCircle />} bg={'rgba(47, 128, 236, 1)'}>Add File</Button>
+                                <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={{base: '13px', md: '16px'}} fontWeight={500}>Drag or Drop files here</Text>
+                                <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={{base: '10px', md: '12px'}} fontWeight={500}>OR</Text>
+                                <Button display="flex" alignItems={'center'} fontSize={{base: '13px', md: '16px'}} variant={"unstyled"} w={{base: '110px', md: '128px'}} h={{base: '30px', md: '35px'}} leftIcon={<AiOutlinePlusCircle />} bg={'rgba(47, 128, 236, 1)'}>Add File</Button>
                             </Box>
-                            <Box mt={8}>
-                                <Text mb={2} fontSize={'12px'} fontWeight={500}>Supported files - JPG, PNG, GIF</Text>
-                                <Text fontSize={'12px'} fontWeight={500}>Please select a file to import the collections</Text>
+                            <Box mt={6}>
+                                <Text mb={2} fontSize={{base: '10px', md: '12px'}} fontWeight={500}>Supported files - JPG, PNG, GIF</Text>
+                                <Text fontSize={{base: '10px', md: '12px'}} fontWeight={500}>Please select a file to import the collections</Text>
                             </Box>
                         </Box>
                     </Flex>
-                    <Flex justifyContent="flex-end" mt={7}>
+                    <Flex justifyContent={{base: 'center', md: 'flex-end'}} mt={7}>
                         <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} w={'180px'} h={'46px'} fontSize={'20px'}>Next</Button>
                     </Flex>
                 </main>
@@ -81,37 +85,36 @@ export default function Privilege() {
             <TabPanel mt={2}>
                 <Box>
                     <Flex justifyContent="space-between" alignItems="center" mb={4}>
-                        <Text fontSize="22px">
+                        <Text fontSize={{base: '20px', md: '22px'}}>
                             Redeemable Type{" "}
-                            <Tooltip label="Redeemable Type" fontSize="md">
-                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={4} h={4} />
+                            <Tooltip label="Redeemable Type" fontSize={{base: 'sm', md: 'md'}}>
+                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={{base: 3, md: 4}} h={{base: 3, md: 4}} />
                             </Tooltip>
                         </Text>
-                        <Switch size="lg" color="rgba(2, 170, 176, 1)" />
+                        <Switch size={{base: 'md', md: 'lg'}} color="rgba(2, 170, 176, 1)" />
                     </Flex>
 
                     <Flex justifyContent="space-between" alignItems="center">
-                        <Text fontSize="22px">
+                        <Text fontSize={{base: '20px', md: '22px'}}>
                             Expiry Type{" "}
-                            <Tooltip label="Expiry Type" fontSize="md">
-                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={4} h={4} />
+                            <Tooltip label="Expiry Type" fontSize={{base: 'sm', md: 'md'}}>
+                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={{base: 3, md: 4}} h={{base: 3, md: 4}} />
                             </Tooltip>
                         </Text>
-                        <Switch size="lg" color="rgba(2, 170, 176, 1)" />
+                        <Switch size={{base: 'md', md: 'lg'}} color="rgba(2, 170, 176, 1)" />
                     </Flex>
 
                     <Box>
-                        <Text fontSize="22px" mt={4}>Categories</Text>
-                        <Select icon={<IoIosArrowDropdown/>} mt={4} placeholder="Select">
+                        <Text fontSize={{base: '20px', md: '22px'}} mt={4}>Categories</Text>
+                        <Select fontSize={{base: '13px', md: '16px'}} icon={<IoIosArrowDropdown/>} mt={4} placeholder="Select">
                             <option value="option1" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "56px", width: "602px" }}>Category</option>
                             <option value="option2" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "40px" }}>Category</option>
                             <option value="option3" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "40px" }}>Category</option>
                         </Select>
                     </Box>
 
-                    <Flex justifyContent="flex-end" mt={36}>
-                        <Spacer />
-                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'}>Submit</Button>
+                    <Flex justifyContent={{base: 'center', md: 'flex-end'}} mt={24}>
+                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'} >Submit</Button>
                     </Flex>
                 </Box>
             </TabPanel>
