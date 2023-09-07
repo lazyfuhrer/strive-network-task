@@ -26,6 +26,7 @@ export default function SmallUpload ({ title, ...rest }: UploadBoxProps) {
         mt={3}
         w={{ base: '100%', md: '100%' }}
         h={{ base: '200px', md: '220' }}
+        border={'0.6px solid rgba(255, 255, 255, 0.3)'}
         style={{
           background: `
             linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),

@@ -27,13 +27,13 @@ export default function Biconomy() {
         </Box>
         <Box w={{ base: '100%', md: '50%' }}>
           <FormControl>
-            <Input placeholder='Name of the Dapp' />
+            <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder='Name of the Dapp' _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
           </FormControl>
           <FormControl mt={7}>
-            <Input placeholder='Chain' />
+            <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder='Chain' _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
           </FormControl>
           <FormControl mt={7}>
-            <Input placeholder='Network' />
+            <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder='Network' _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
           </FormControl>
           <Box display="flex" justifyContent="flex-end">
             <Button
@@ -56,14 +56,14 @@ export default function Biconomy() {
       >
         <Box w={{ base: '100%', md: '50%' }}>
           <FormControl>
-            <Input placeholder='Smart Contract Name' />
+            <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder='Smart Contract Name' _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
           </FormControl>
           <FormControl mt={{ base: 5, md: 16 }}>
-            <Input placeholder='Smart Contract Address' />
+            <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder='Smart Contract Address' _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
           </FormControl>
           <FormControl mt={{ base: 5, md: 14 }}>
             <FormLabel>Meta Transaction Type</FormLabel>
-            <Select placeholder='Select'>
+            <Select placeholder='Select' _placeholder={{ color: 'red' }}>
               <option value='option1'>Option 1</option>
               <option value='option2'>Option 2</option>
               <option value='option3'>Option 3</option>
@@ -72,8 +72,10 @@ export default function Biconomy() {
         </Box>
         <Box w={{ base: '100%', md: '50%' }}>
           <Textarea
+            border={'1.5px solid rgba(255, 255, 255, 1)'}
             h='275px'
             placeholder='Application Binary Interface (ABI)'
+            _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
           />
         </Box>
       </Stack>

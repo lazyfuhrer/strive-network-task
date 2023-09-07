@@ -19,6 +19,8 @@ export default function Push() {
           <Box flex={{ base: 1, md: 'none' }} pl={{ base: 0, md: 10 }}>
             <FormControl mb={3}>
               <Input
+                border={'1.5px solid rgba(255, 255, 255, 1)'}
+                _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
                 placeholder='Channel Address'
                 w={['100%', '100%', '304px', '504px']}
                 h='47px'
@@ -45,6 +47,8 @@ export default function Push() {
           <Box pl={{ base: 0, md: 10 }}>
             <FormControl mb={6}>
               <Input
+                border={'1.5px solid rgba(255, 255, 255, 1)'}
+                _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
                 placeholder='Collection Name'
                 w={['100%', '100%', '304px', '504px']}
                 h='47px'
@@ -67,6 +71,8 @@ export default function Push() {
           <Box pl={{ base: 0, md: 10 }}>
             <FormControl mb={6}>
               <Input
+                border={'1.5px solid rgba(255, 255, 255, 1)'}
+                _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
                 placeholder='Notification Title'
                 w={['100%', '100%', '304px', '504px']}
                 h='47px'
@@ -74,6 +80,8 @@ export default function Push() {
             </FormControl>
             <FormControl>
               <Textarea
+                border={'1.5px solid rgba(255, 255, 255, 1)'}
+                _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
                 placeholder='Notification Body'
                 w={['100%', '100%', '304px', '504px']}
                 h='98px'

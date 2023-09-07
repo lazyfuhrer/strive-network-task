@@ -23,6 +23,7 @@ export default function BigUpload() {
           w={{ base: "310px", md: "360px" }}
           h={{ base: "300px", md: "340px" }}
           textAlign="center"
+          border={'1px solid rgba(255, 255, 255, 0.3)'}
           style={{
             background: `
                             linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),

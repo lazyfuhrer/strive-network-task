@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Flex, FormControl, Icon, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, FormControl, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
 import { CloseIcon, InfoIcon } from '@chakra-ui/icons'; 
 import { IoIosArrowDropdown } from 'react-icons/io';
 import BigUpload from '@/components/BigUpload';
@@ -34,13 +34,15 @@ export default function Privilege() {
             <TabPanels>
             <TabPanel display="flex" flexDirection="column">
                 <FormControl mt={4}>
-                    <Input placeholder="Utility Name" />
+                    <Input border={'1.5px solid rgba(255, 255, 255, 1)'} placeholder="Utility Name" _placeholder={{ color: 'rgba(255, 255, 255, 1)' }} />
                 </FormControl>
                 <FormControl mt={8} isRequired>
                     <Textarea
-                    placeholder="Utility Description"
-                    resize="vertical"
-                    rows={5}
+                        border={'1.5px solid rgba(255, 255, 255, 1)'}
+                        _placeholder={{ color: 'rgba(255, 255, 255, 1)' }}
+                        placeholder="Utility Description"
+                        resize="vertical"
+                        rows={5}
                     />
                 </FormControl>
                 <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf={{base: 'center', md: 'flex-end'}}>

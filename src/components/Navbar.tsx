@@ -50,8 +50,9 @@ export default function Navbar ({ onOpen, ...rest }: NavbarProps) {
             <Input
               type="text"
               placeholder="Search Collections, Utilities and NFT’s"
+              _placeholder={{ color: 'rgba(255, 255, 255, 1)', fontSize: '14px'}}
               size="md"
-              color="rgba(2, 170, 176, 1)"
+              bgColor="rgba(2, 136, 141, 0.2)"
               borderColor="rgba(2, 170, 176, 1)"
               borderRadius={'36px'}
               border={'1px solid rgba(255, 255, 255, 0.63)'}
