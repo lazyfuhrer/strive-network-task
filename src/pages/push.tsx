@@ -4,7 +4,7 @@ export default function Push() {
   return (
     <Box pl={10} pr={10} pt={7} pb={{base: 5, md: 0}}>
       <Text fontSize={{base: '31px', md: '40px'}} fontWeight={700} style={{ background: 'linear-gradient(90deg, #02AAB0 30.18%, #00CDAC 95.88%)', WebkitBackgroundClip: 'text', color: 'transparent'}}>Push Notifications</Text>
-      <Stack mt={5} direction='column' spacing={19} divider={<StackDivider borderColor='rgba(255, 255, 255, 0.3)' />}>
+      <Stack mt={10} direction='column' spacing={19} divider={<StackDivider borderColor='rgba(255, 255, 255, 0.3)' />}>
         <Stack direction={{ base: 'column', md: 'row' }}>
           <Box flex={1} pr={{ base: 0, md: 10 }}>
             <Text fontSize={['20px', '24px']} fontWeight={700} mb={1}>
@@ -21,7 +21,7 @@ export default function Push() {
               <Input
                 placeholder='Channel Address'
                 w={['100%', '100%', '304px', '504px']}
-                h='57px'
+                h='47px'
               />
             </FormControl>
             <Flex justifyContent="space-between" alignItems="center">
@@ -47,7 +47,7 @@ export default function Push() {
               <Input
                 placeholder='Collection Name'
                 w={['100%', '100%', '304px', '504px']}
-                h='57px'
+                h='47px'
               />
             </FormControl>
           </Box>
@@ -69,14 +69,14 @@ export default function Push() {
               <Input
                 placeholder='Notification Title'
                 w={['100%', '100%', '304px', '504px']}
-                h='57px'
+                h='47px'
               />
             </FormControl>
             <FormControl>
               <Textarea
                 placeholder='Notification Body'
                 w={['100%', '100%', '304px', '504px']}
-                h='108px'
+                h='98px'
               />
             </FormControl>
           </Box>
