@@ -34,11 +34,12 @@ export default function SidebarContent ({ onClose, ...rest }: SidebarProps) {
         zIndex={10}
         transition="3s ease"
         bg="#0A0C17"
-        borderRight="1px"
-        borderRightColor={useColorModeValue('gray.200', 'gray.700')}
         w={{ base: 'full', md: 60 }}
         h="100vh"
         mt={{ base: 0, md: 20 }}
+        style={{
+          borderRight: '0.5px solid rgba(255, 255, 255, 0.3)'
+        }}
         {...rest}
       >
         <Flex h={{base: '20', md: '5'}} alignItems="center" mx="8" justifyContent="space-between">

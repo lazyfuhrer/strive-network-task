@@ -23,6 +23,17 @@ This project is a frontend application developed as part of the Strive Network's
 - [Chakra UI](https://chakra-ui.com/): A simple and modular component library for building accessible and highly customizable UIs.
 - [pnpm](https://pnpm.io/): A fast, disk space-efficient package manager for JavaScript/Node.js projects.
 
+## Default Dark Mode
+
+Please note that if the application appears in light mode when you first visit it, it may be due to cookies set by Chakra UI previously. To view the application in its default dark mode, follow these steps:
+
+1. Clear your browser's cookies for this page.
+
+2. Refresh the page.
+
+The application should now be displayed in the default dark mode.
+
+
 ## Getting Started
 
 To get started with this project, follow these steps:
