@@ -156,7 +156,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Image maxW={'120'} maxH={'50'} src='/icons/strive-icon.svg'/>
         </Box>
 
-        <InputGroup flex={1} ml={{base : 30, md: 48}}>
+        <InputGroup flex={1} ml={{base : 25, md: 48}} mr={3}>
             <InputLeftElement pointerEvents='none'>
               <BsSearch color='rgba(255, 255, 255, 1)' />
             </InputLeftElement>
@@ -173,7 +173,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         </InputGroup>
 
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
-          <Box position="relative" display="inline-block">
+          <Box mr={3} position="relative" display="inline-block">
             <IconButton color={"rgba(2, 170, 176, 1)"} size="xl" variant="ghost" aria-label="open menu" icon={<BellColored />} />
             <Box style={{ position: "absolute", top: "0px", right: "0px", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255, 54, 151, 1)"}}></Box>
           </Box>
