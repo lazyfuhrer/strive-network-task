@@ -1,8 +1,8 @@
-import { Box, Button, Divider, FormControl, FormLabel, Input, Select, Stack, StackDivider, Text, Textarea } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Select, Stack, StackDivider, Text, Textarea } from '@chakra-ui/react';
 
 export default function Biconomy() {
   return (
-    <Stack p={10} spacing={18} divider={<StackDivider borderColor='rgba(255, 255, 255, 0.3)' />}>
+    <Stack p={{base: 10, md: 12}} spacing={18} divider={<StackDivider borderColor='rgba(255, 255, 255, 0.3)' />}>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         spacing={{ base: 5, md: 10 }}
