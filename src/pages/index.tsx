@@ -7,7 +7,7 @@ const exo = Exo({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Flex justify={'center'} mt={10}>
+      <Flex justify={'center'} p={20}>
       <Tabs
         w={'638px'}
         h={'full'}
@@ -18,10 +18,10 @@ export default function Home() {
         size={'md'}
       >
         <Box>
-          <TabList gap={'35px'}>
-            <Tab fontSize={"16px"} fontWeight={600}>Collection Info</Tab>
-            <Tab fontSize={"16px"} fontWeight={600}>Upload</Tab>
-            <Tab fontSize={"16px"} fontWeight={600}>Details</Tab>
+          <TabList gap={{base: '25px', md: '35px'}}>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Collection Info</Tab>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Upload</Tab>
+            <Tab fontSize={{base: '10px', md: '16px'}} fontWeight={600}>Details</Tab>
           </TabList>
         </Box>
 
