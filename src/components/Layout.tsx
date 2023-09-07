@@ -20,8 +20,11 @@ import {
   MenuButton,
   Image,
   Input,
+  InputGroup,
+  InputLeftElement,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
+import { BsSearch } from 'react-icons/bs'
 
 import { Profile, Bell, Fire, Rocket, Analytics, LogOut, Plus, BellColored } from '@/icons/strive'
 
@@ -143,7 +146,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         />
   
         <Box
-          flex={1}
+          
           display="flex"
           fontSize="2xl"
           fontFamily="monospace"
@@ -151,20 +154,26 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           ml={5}
           justifySelf="flex-start"
         >
-          <Image src='/icons/strive-icon.svg'/>
+          <Image maxW={'120'} maxH={'50'} src='/icons/strive-icon.svg'/>
         </Box>
 
+        <InputGroup flex={1} ml={{base : 30, md: 48}}>
+            <InputLeftElement pointerEvents='none'>
+              <BsSearch color='rgba(255, 255, 255, 1)' />
+            </InputLeftElement>
+            <Input
+              type="text"
+              placeholder="Search Collections, Utilities and NFT’s"
+              size="md"
+              color="rgba(2, 170, 176, 1)"
+              borderColor="rgba(2, 170, 176, 1)"
+              borderRadius={'36px'}
+              border={'1px solid rgba(255, 255, 255, 0.63)'}
+              width={{ base: '100%', md: '580px' }}
+            />
+        </InputGroup>
+
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
-          <Input
-            type="text"
-            placeholder="Search Collections, Utilities and NFT’s"
-            size="lg"
-            color="rgba(2, 170, 176, 1)"
-            borderColor="rgba(2, 170, 176, 1)"
-            borderRadius={'36px'}
-            border={'1px solid rgba(255, 255, 255, 0.63)'}
-            width={{ base: '100%', md: '580px' }}
-          />
           <IconButton
             color={'rgba(2, 170, 176, 1)'}
             size="lg"
@@ -194,8 +203,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           </Flex>
         </HStack>
       </Flex>
-    );
-  };
+  );
+};
   
 
 export default function Layout ({ children } : any) {
