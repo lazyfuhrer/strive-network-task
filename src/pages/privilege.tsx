@@ -1,17 +1,18 @@
 import { Exo } from 'next/font/google';
-import { Box, Button, Center, Divider, Flex, FormControl, FormLabel, Heading, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, FormControl, Icon, IconButton, Input, Select, Spacer, Switch, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, Tooltip } from "@chakra-ui/react";
 import { CloseIcon, InfoIcon } from '@chakra-ui/icons'; 
 import { IoIosArrowDropdown } from 'react-icons/io';
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { FiUpload } from 'react-icons/fi';
 
 const exo = Exo({ subsets: ['latin'] })
 
 export default function Privilege() {
   return (
     <>
-      <Flex justify={'center'} mt={10}> 
+      <Flex justify={'center'} p={16}> 
       <Tabs
-        w={'638px'}
+        w={{base: '350px', md: '550px'}}
         h={'full'}
         bg={'rgba(10, 12, 23, 1)'}
         border={'1px'}
@@ -27,7 +28,7 @@ export default function Privilege() {
         <Divider />
         <Box p={'8'}>
             <Box>
-            <TabList gap={'35px'}>
+            <TabList gap={{base: '25px', md: '35px'}}>
                 <Tab fontSize={"12px"} fontWeight={600}>Utility Info</Tab>
                 <Tab fontSize={"12px"} fontWeight={600}>Upload</Tab>
                 <Tab fontSize={"12px"} fontWeight={600}>Redeemable Type</Tab>
@@ -60,11 +61,14 @@ export default function Privilege() {
                             linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
                             `,
                         }}>
-                            <Text fontSize={'24px'} fontWeight={600}>Upload your file</Text>
+                            <Flex>
+                                <Icon as={FiUpload} w={'29px'} h={'29px'} mr={{base: '10px', md: '15px'}}/>
+                                <Text fontSize={'24px'} fontWeight={600}>Upload your file</Text>
+                            </Flex>
                             <Box border="2px dashed rgba(47, 128, 236, 1)" mt={6} mx={'auto'} width={'80%'} h={'140px'} borderRadius={'24px'} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
                                 <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={'16px'} fontWeight={500}>Drag or Drop files here</Text>
                                 <Text color={'rgba(47, 128, 236, 1)'} mb={2} fontSize={'12px'} fontWeight={500}>OR</Text>
-                                <Button variant={"unstyled"} w={'128px'} h={'35px'} leftIcon={<AiOutlinePlusCircle />} bg={'rgba(47, 128, 236, 1)'}>Add File</Button>
+                                <Button display="flex" alignItems={'center'} variant={"unstyled"} w={'128px'} h={'35px'} leftIcon={<AiOutlinePlusCircle />} bg={'rgba(47, 128, 236, 1)'}>Add File</Button>
                             </Box>
                             <Box mt={8}>
                                 <Text mb={2} fontSize={'12px'} fontWeight={500}>Supported files - JPG, PNG, GIF</Text>
@@ -81,35 +85,35 @@ export default function Privilege() {
             <TabPanel mt={2}>
                 <Box>
                     <Flex justifyContent="space-between" alignItems="center" mb={4}>
-                        <Text fontSize="22px">
+                        <Text fontSize={{base: '20px', md: '22px'}}>
                             Redeemable Type{" "}
-                            <Tooltip label="Redeemable Type" fontSize="md">
-                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={4} h={4} />
+                            <Tooltip label="Redeemable Type" fontSize={{base: 'sm', md: 'md'}}>
+                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={{base: 3, md: 4}} h={{base: 3, md: 4}} />
                             </Tooltip>
                         </Text>
-                        <Switch size="lg" color="rgba(2, 170, 176, 1)" />
+                        <Switch size={{base: 'md', md: 'lg'}} color="rgba(2, 170, 176, 1)" />
                     </Flex>
 
                     <Flex justifyContent="space-between" alignItems="center">
-                        <Text fontSize="22px">
+                        <Text fontSize={{base: '20px', md: '22px'}}>
                             Expiry Type{" "}
-                            <Tooltip label="Expiry Type" fontSize="md">
-                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={4} h={4} />
+                            <Tooltip label="Expiry Type" fontSize={{base: 'sm', md: 'md'}}>
+                            <InfoIcon color={'rgba(2, 170, 176, 1)'} w={{base: 3, md: 4}} h={{base: 3, md: 4}} />
                             </Tooltip>
                         </Text>
-                        <Switch size="lg" color="rgba(2, 170, 176, 1)" />
+                        <Switch size={{base: 'md', md: 'lg'}} color="rgba(2, 170, 176, 1)" />
                     </Flex>
 
                     <Box>
-                        <Text fontSize="22px" mt={4}>Categories</Text>
-                        <Select icon={<IoIosArrowDropdown/>} mt={4} placeholder="Select">
+                        <Text fontSize={{base: '20px', md: '22px'}} mt={4}>Categories</Text>
+                        <Select fontSize={{base: '13px', md: '16px'}} icon={<IoIosArrowDropdown/>} mt={4} placeholder="Select">
                             <option value="option1" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "56px", width: "602px" }}>Category</option>
                             <option value="option2" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "40px" }}>Category</option>
                             <option value="option3" style={{ backgroundColor: "rgba(0, 0, 0, 1)", height: "40px" }}>Category</option>
                         </Select>
                     </Box>
 
-                    <Flex justifyContent="flex-end" mt={36}>
+                    <Flex justifyContent="flex-end" mt={24}>
                         <Spacer />
                         <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'}>Submit</Button>
                     </Flex>
