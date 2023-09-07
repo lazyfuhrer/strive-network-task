@@ -10,7 +10,7 @@ const exo = Exo({ subsets: ['latin'] })
 export default function Privilege() {
   return (
     <>
-      <Flex justify={'center'} p={16}> 
+      <Flex justify={'center'} pt={10}> 
       <Tabs
         w={{base: '350px', md: '550px'}}
         minH={'500px'}
@@ -47,7 +47,7 @@ export default function Privilege() {
                     rows={5}
                     />
                 </FormControl>
-                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf="flex-end">
+                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf={{base: 'center', md: 'flex-end'}}>
                     Next
                 </Button>
             </TabPanel>
@@ -113,9 +113,8 @@ export default function Privilege() {
                         </Select>
                     </Box>
 
-                    <Flex justifyContent="flex-end" mt={24}>
-                        <Spacer />
-                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'}>Submit</Button>
+                    <Flex justifyContent={{base: 'center', md: 'flex-end'}} mt={24}>
+                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'} >Submit</Button>
                     </Flex>
                 </Box>
             </TabPanel>
