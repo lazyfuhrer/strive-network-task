@@ -26,11 +26,11 @@ export default function Utility() {
                     </Flex>
                     <Spacer />
                     <ButtonGroup gap='2'>
-                        <Button border={1}>Cancel</Button>
+                        <Button border={'1px'} borderColor={'rgba(255, 255, 255, 0.3)'} color={'rgba(255, 255, 255, 0.8)'} variant={'outline'} >Cancel</Button>
                         <Button bgColor={'rgba(2, 170, 176, 1)'}>Save Changes</Button>
                     </ButtonGroup>
             </Flex>
-            <Box backgroundImage="url('/images/banner.svg')" backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" w={'full'} h={{ base: '420px', md: '371px' }}>
+            <Box borderRadius={{base: '36px'}} backgroundImage="url('/images/banner.svg')" backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" w={'full'} h={{ base: '460px', md: '371px' }}>
                 <Stack p={7}>
                     <Box>
                         <Image src="/images/ape.svg" alt="bored ape" />

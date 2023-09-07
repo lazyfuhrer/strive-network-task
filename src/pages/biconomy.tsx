@@ -1,4 +1,4 @@
-import { Box, Button, Divider, FormControl, FormLabel, Input, Select, Stack, StackDivider, Text, Textarea } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Select, Stack, StackDivider, Text, Textarea } from '@chakra-ui/react';
 
 export default function Biconomy() {
   return (
