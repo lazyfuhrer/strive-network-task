@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Box, Button, ButtonGroup, CloseButton, Flex, Image, Input, InputGroup, InputRightElement, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react";
+import { Alert, AlertIcon, Box, Button, ButtonGroup, Center, CloseButton, Flex, Image, Input, InputGroup, InputRightElement, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react";
 
 export default function Utility() {
   const { isOpen: isVisible, onClose } = useDisclosure({ defaultIsOpen: true });
@@ -16,7 +16,12 @@ export default function Utility() {
         <Box pl={5} pr={5} mt={4}>
             <Flex alignItems='center' gap='2' mb={3}>
                     <Flex p='2' gap={4}>
-                        <Image src="/icons/back-arrow.svg" alt="arrow left" />
+                        <Center>
+                            <Button variant={'unstyled'}>
+                                <Image src="/icons/back-arrow.svg" alt="arrow left" />
+                            </Button>
+                        </Center>
+                        
                         <Text fontSize={{base: '26px', md: '36px'}} fontWeight={600}>View Utility</Text>
                     </Flex>
                     <Spacer />

@@ -19,10 +19,11 @@ import {
   Menu,
   MenuButton,
   Image,
+  Input,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 
-import { Profile, Bell, Fire, Rocket, Analytics, LogOut, Plus, BellColored } from '@/icons/Profile'
+import { Profile, Bell, Fire, Rocket, Analytics, LogOut, Plus, BellColored } from '@/icons/strive'
 
 interface LinkItemProps {
   name: string
@@ -154,6 +155,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         </Box>
 
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
+          <Input
+            type="text"
+            placeholder="Search Collections, Utilities and NFT’s"
+            size="lg"
+            color="rgba(2, 170, 176, 1)"
+            borderColor="rgba(2, 170, 176, 1)"
+            borderRadius={'36px'}
+            border={'1px solid rgba(255, 255, 255, 0.63)'}
+            width={{ base: '100%', md: '580px' }}
+          />
           <IconButton
             color={'rgba(2, 170, 176, 1)'}
             size="lg"
@@ -167,9 +178,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 <HStack>
                   <Avatar
                     size={"sm"}
-                    src={
-                      "https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                    }
+                    src={'/icons/avatar.svg'}
                   />
                   <VStack
                     display={{ base: "none", md: "flex" }}
