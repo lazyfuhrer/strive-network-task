@@ -20,7 +20,6 @@ export default function Navbar ({ onOpen, ...rest }: NavbarProps) {
         alignItems="center"
         bg="#0A1E2F"
         justifyContent={{ base: 'space-between', md: 'flex-end' }}
-        borderBottomWidth="1px"
         {...rest}
       >
         <IconButton

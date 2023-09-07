@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 export default function Layout ({ children } : any) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-      <Box minH="100vh" backgroundImage={"linear-gradient(to right,#0A0C17, #0A1E2F)"}>
+      <Box minH="100vh" backgroundImage={"linear-gradient(to bottom,#0A0C17, #0A1E2F)"}>
         <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
         <Drawer
           isOpen={isOpen}
