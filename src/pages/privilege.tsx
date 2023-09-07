@@ -45,7 +45,7 @@ export default function Privilege() {
                         rows={5}
                     />
                 </FormControl>
-                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf={{base: 'center', md: 'flex-end'}}>
+                <Button variant="unstyled" bg={'rgba(2, 170, 176, 1)'} _hover={{ bg: "rgba(0, 120, 126, 1)" }} mt={28} w={'180px'} h={'46px'} fontSize={'20px'} alignSelf={{base: 'center', md: 'flex-end'}}>
                     Next
                 </Button>
             </TabPanel>
@@ -86,7 +86,7 @@ export default function Privilege() {
                     </Box>
 
                     <Flex justifyContent={{base: 'center', md: 'flex-end'}} mt={24}>
-                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" w={'180px'} h={'46px'} fontSize={'20px'} >Submit</Button>
+                        <Button variant="unstyled" bg="rgba(2, 170, 176, 1)" _hover={{ bg: "rgba(0, 120, 126, 1)" }} w={'180px'} h={'46px'} fontSize={'20px'} >Submit</Button>
                     </Flex>
                 </Box>
             </TabPanel>

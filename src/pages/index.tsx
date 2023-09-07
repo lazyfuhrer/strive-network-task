@@ -74,7 +74,7 @@ export default function Home() {
               <Input border={'1.5px solid rgba(255, 255, 255, 0.3)'} placeholder='Optional' />
             </FormControl>
             <Center>
-              <Button variant="unstyled" mt={10} bg={"rgba(2, 170, 176, 1)"} w={'186px'}>Submit</Button>
+              <Button variant="unstyled" mt={10} bg={"rgba(2, 170, 176, 1)"} _hover={{ bg: "rgba(0, 120, 126, 1)" }} w={'186px'}>Submit</Button>
             </Center>
           </TabPanel>
         </TabPanels>

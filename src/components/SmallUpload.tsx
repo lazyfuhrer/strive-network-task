@@ -44,7 +44,7 @@ export default function SmallUpload ({ title, ...rest }: UploadBoxProps) {
         <Center flexDirection="column" w={{ base: '100%', md: '100%' }} h="250px" borderRadius="12px" border="2px dashed rgba(47, 128, 236, 1)">
           <Text mb={2} fontSize={{ base: '12px', md: '16px' }} color={'rgba(47, 128, 236, 1)'}>Drag or Drop files here</Text>
           <Text mb={2} fontSize={{ base: '10px', md: '12px' }} color={'rgba(47, 128, 236, 1)'}>OR</Text>
-          <Button display="flex" alignItems="center" fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} leftIcon={<AiOutlinePlusCircle />} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
+          <Button display="flex" alignItems="center" fontSize={{ base: '12px', md: '16px' }} variant="unstyled" bg={'rgba(47, 128, 236, 1)'} _hover={{ bg: 'rgba(0, 85, 160, 1)' }} leftIcon={<AiOutlinePlusCircle />} w={{ base: '90px', md: '128px' }} h={{ base: '25px', md: '35px' }}>Add File</Button>
         </Center>
       </Box>
     </Box>

@@ -39,6 +39,7 @@ export default function Biconomy() {
             <Button
               variant='solid'
               bgColor={'rgba(2, 170, 176, 1)'}
+              _hover={{ bg: "rgba(0, 120, 126, 1)" }}
               size='lg'
               mt={7}
               w={{ base: '100%', md: '218px' }}

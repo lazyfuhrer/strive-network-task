@@ -79,6 +79,7 @@ export default function BigUpload() {
               h={{ base: "30px", md: "35px" }}
               leftIcon={<AiOutlinePlusCircle />}
               bg={"rgba(47, 128, 236, 1)"}
+              _hover={{ bg: 'rgba(0, 85, 160, 1)' }}
             >
               Add File
             </Button>
@@ -101,6 +102,7 @@ export default function BigUpload() {
         <Button
           variant="unstyled"
           bg={"rgba(2, 170, 176, 1)"}
+          _hover={{ bg: "rgba(0, 120, 126, 1)" }}
           w={"180px"}
           h={"46px"}
           fontSize={"20px"}

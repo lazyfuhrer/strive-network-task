@@ -28,7 +28,7 @@ export default function Push() {
             </FormControl>
             <Flex justifyContent="space-between" alignItems="center">
               <Text fontSize={'14px'} fontWeight={500} w={'159px'}>Don’t have the channel? Create one here...</Text>
-              <Button borderRadius={'8px'} w={'148px'} h={'35px'} bgColor={'rgba(2, 170, 176, 0.3)'}>Create</Button>
+              <Button borderRadius={'8px'} w={'148px'} h={'35px'} bgColor={'rgba(2, 170, 176, 0.3)'} _hover={{ bg: "rgba(0, 120, 126, 1)" }}>Create</Button>
             </Flex>
           </Box>
         </Stack>
@@ -92,8 +92,8 @@ export default function Push() {
         
         <Flex mt={1} minWidth='max-content' alignItems='center' justifyContent='flex-end' gap='2'>
           <ButtonGroup gap='2'>
-            <Button bgColor={'transparent'} border={'1px'}>Cancel</Button>
-            <Button bgColor={'rgba(2, 170, 176, 1)'}>Send Notifications</Button>
+            <Button border={'1px'} borderColor={'rgba(255, 255, 255, 0.3)'} color={'rgba(255, 255, 255, 0.8)'} variant={'outline'}>Cancel</Button>
+            <Button bgColor={'rgba(2, 170, 176, 1)'} _hover={{ bg: "rgba(0, 120, 126, 1)" }}>Send Notifications</Button>
           </ButtonGroup>
         </Flex>
       </Stack>

@@ -27,7 +27,7 @@ export default function Utility() {
                     <Spacer />
                     <ButtonGroup gap='2'>
                         <Button size={{base: 'sm', md: 'md'}} border={'1px'} borderColor={'rgba(255, 255, 255, 0.3)'} color={'rgba(255, 255, 255, 0.8)'} variant={'outline'} >Cancel</Button>
-                        <Button size={{base: 'sm', md: 'md'}} bgColor={'rgba(2, 170, 176, 1)'}>Save Changes</Button>
+                        <Button size={{base: 'sm', md: 'md'}} bgColor={'rgba(2, 170, 176, 1)'} _hover={{ bg: "rgba(0, 120, 126, 1)" }}>Save Changes</Button>
                     </ButtonGroup>
             </Flex>
             <Box borderRadius={{base: '36px'}} backgroundImage="url('/images/banner.svg')" backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" w={'full'} h={{ base: '460px', md: '371px' }}>
