@@ -22,19 +22,24 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import { FiMenu } from 'react-icons/fi'
 import { BsSearch } from 'react-icons/bs'
 
 import { Profile, Bell, Fire, Rocket, Analytics, LogOut, Plus, BellColored } from '@/icons/strive'
+import { useRouter } from 'next/router'
 
 interface LinkItemProps {
   name: string
   icon: any
+  to: string
 }
 
 interface NavItemProps extends FlexProps {
   icon: any
+  to: string
   children: React.ReactNode
 }
 
@@ -47,16 +52,18 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Profile', icon: Profile },
-  { name: 'Push Notifications', icon: Bell },
-  { name: 'Gas Fee', icon: Fire },
-  { name: 'Utilities Launchpad', icon: Rocket },
-  { name: 'Add Utility', icon: Plus },
-  { name: 'Analytics', icon: Analytics },
-  { name: 'Logout', icon: LogOut },
+  { name: 'Profile', icon: Profile, to: '/' },
+  { name: 'Push Notifications', icon: Bell, to: '/push' },
+  { name: 'Gas Fee', icon: Fire, to: '/biconomy' },
+  { name: 'Utilities Launchpad', icon: Rocket, to: '/utility' },
+  { name: 'Add Utility', icon: Plus, to: '/privilege' },
+  { name: 'Analytics', icon: Analytics, to: '/analytics' },
+  { name: 'Logout', icon: LogOut, to: '/logout' },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const router = useRouter();
+  const isActive = (pathname : string) => router.pathname === pathname;
   return (
     <Box
       position="fixed"
@@ -77,7 +84,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton color={'rgba(2, 170, 176, 1)'} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} to={link.to} bg={isActive(link.to) ? '#0A1E2F' : ''} color={isActive(link.to) ? 'white' : ''}>
           {link.name}
         </NavItem>
       ))}
@@ -85,17 +92,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   )
 }
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, to, children, ...rest }: NavItemProps) => {
   return (
-    <Box
-      as="a"
-      href="#"
+    <Link
+      as={NextLink}
+      href={to}
       style={{ textDecoration: 'none' }}
       _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
         mx="4"
+        mt="1"
         borderRadius="lg"
         role="group"
         cursor="pointer"
@@ -116,7 +124,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         )}
         {children}
       </Flex>
-    </Box>
+    </Link>
   )
 }
 
