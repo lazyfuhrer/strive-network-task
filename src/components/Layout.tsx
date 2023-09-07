@@ -123,19 +123,19 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     return (
       <Flex
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      zIndex={10}
-      px={{ base: 4, md: 4 }}
-      height="20"
-      alignItems="center"
-      bg="#0A1E2F"
-      justifyContent={{ base: 'space-between', md: 'flex-end' }}
-      borderBottomWidth="1px"
-      {...rest}
-    >
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        zIndex={10}
+        px={{ base: 4, md: 4 }}
+        height="20"
+        alignItems="center"
+        bg="#0A1E2F"
+        justifyContent={{ base: 'space-between', md: 'flex-end' }}
+        borderBottomWidth="1px"
+        {...rest}
+      >
         <IconButton
           color={'rgba(2, 170, 176, 1)'}
           display={{ base: "flex", md: "none" }}
@@ -146,7 +146,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         />
   
         <Box
-          
           display="flex"
           fontSize="2xl"
           fontFamily="monospace"
@@ -174,13 +173,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         </InputGroup>
 
         <HStack spacing={{ base: "0", md: "6" }} justifySelf="flex-end">
-          <IconButton
-            color={'rgba(2, 170, 176, 1)'}
-            size="lg"
-            variant="ghost"
-            aria-label="open menu"
-            icon={<BellColored />}
-          />
+          <Box position="relative" display="inline-block">
+            <IconButton color={"rgba(2, 170, 176, 1)"} size="xl" variant="ghost" aria-label="open menu" icon={<BellColored />} />
+            <Box style={{ position: "absolute", top: "0px", right: "0px", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255, 54, 151, 1)"}}></Box>
+          </Box>
           <Flex alignItems={"center"}>
             <Menu>
               <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: "none" }}>
@@ -188,6 +184,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   <Avatar
                     size={"sm"}
                     src={'/icons/avatar.svg'}
+                    showBorder={true}
+                    borderColor={'rgba(2, 170, 176, 1)'}
+                    borderStyle={'dashed'}
                   />
                   <VStack
                     display={{ base: "none", md: "flex" }}
