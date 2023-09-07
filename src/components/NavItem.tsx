@@ -28,11 +28,11 @@ export default function NavItem ({ icon, to, children, ...rest }: NavItemProps) 
           {...rest}>
           {icon && (
             <Icon
-              //color={'linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%)'}
               mr="4"
               fontSize="16"
+              color={'#00CDAC'}
               _groupHover={{
-                color: 'white',
+                color: 'rgba(2, 170, 176, 1)',
               }}
               as={icon}
             />
