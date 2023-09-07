@@ -38,7 +38,7 @@ export default function Biconomy() {
           <Box display="flex" justifyContent="flex-end">
             <Button
               variant='solid'
-              colorScheme='teal'
+              bgColor={'rgba(2, 170, 176, 1)'}
               size='lg'
               mt={7}
               w={{ base: '100%', md: '218px' }}
