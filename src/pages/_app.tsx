@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <main className={quicksand.className}>
-        <Layout children={<Component {...pageProps} />} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </ChakraProvider>
   );
