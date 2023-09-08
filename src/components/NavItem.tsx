@@ -1,19 +1,28 @@
-import { Flex, FlexProps, Icon, Link } from "@chakra-ui/react"
-import NextLink from 'next/link'
+import { Flex, FlexProps, Icon, Link } from "@chakra-ui/react";
+import NextLink from 'next/link';
+import { motion } from "framer-motion";
 
 interface NavItemProps extends FlexProps {
-  icon: any
-  to: string
-  children: React.ReactNode
+  icon: any;
+  to: string;
+  children: React.ReactNode;
 }
 
-export default function NavItem ({ icon, to, children, ...rest }: NavItemProps) {
-    return (
-      <Link
-        as={NextLink}
-        href={to}
-        style={{ textDecoration: 'none' }}
-        _focus={{ boxShadow: 'none' }}>
+export default function NavItem({ icon, to, children, ...rest }: NavItemProps) {
+  return (
+    <Link
+      as={NextLink}
+      href={to}
+      style={{ textDecoration: 'none' }}
+      _focus={{ boxShadow: 'none' }}
+    >
+      <motion.div
+        whileTap={{ opacity: 0 }}
+        transition={{
+          ease: 'easeOut',
+          duration: 0.3,
+        }}
+      >
         <Flex
           align="center"
           p="4"
@@ -25,7 +34,8 @@ export default function NavItem ({ icon, to, children, ...rest }: NavItemProps) 
           _hover={{
             bg: '#0A1E2F',
           }}
-          {...rest}>
+          {...rest}
+        >
           {icon && (
             <Icon
               mr="4"
@@ -39,6 +49,7 @@ export default function NavItem ({ icon, to, children, ...rest }: NavItemProps) 
           )}
           {children}
         </Flex>
-      </Link>
-    )
-}
+      </motion.div>
+    </Link>
+  );
+};

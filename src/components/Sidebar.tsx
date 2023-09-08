@@ -1,4 +1,4 @@
-import { Box, BoxProps, CloseButton, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, BoxProps, CloseButton, Flex } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import NavItem from "./NavItem";
 import { Analytics, Bell, Fire, LogOut, Plus, Profile, Rocket } from "@/icons/strive";
@@ -46,10 +46,10 @@ export default function SidebarContent ({ onClose, ...rest }: SidebarProps) {
           <CloseButton color={'rgba(2, 170, 176, 1)'} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
         </Flex>
         {LinkItems.map((link) => (
-          <NavItem key={link.name} icon={link.icon} to={link.to} bg={isActive(link.to) ? '#0A1E2F' : ''} color={isActive(link.to) ? 'white' : ''}>
+          <NavItem key={link.name} icon={link.icon} to={link.to} bg={isActive(link.to) ? '#0A1E2F' : ''}>
             {link.name}
           </NavItem>
         ))}
       </Box>
-    )
-}
+    );
+};

@@ -7,7 +7,6 @@ import {
     IconButton,
     Input,
     Select,
-    Spacer,
     Switch,
     Tab,
     TabList,
