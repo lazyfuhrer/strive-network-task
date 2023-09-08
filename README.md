@@ -14,7 +14,7 @@ Here is the Figma [link](https://www.figma.com/file/d3cznb822NPNiPyFo6jIfJ/UI%2F
 
 ## Project Overview
 
-This project is a frontend application developed as part of the Strive Network's hiring process. It showcases your skills as a frontend developer, particularly in Next.js, TypeScript, and Chakra UI.
+This project is a frontend application developed as part of the Strive Network's FE task. It showcases my skills as a frontend developer, particularly in Next.js, TypeScript, and Chakra UI.
 
 ### Technologies Used
 
