@@ -46,6 +46,7 @@ export default function Home() {
           </Box>
 
           <TabPanels>
+            {/* Collection Info tab */}
             <TabPanel>
               <FormControl mt={3} isRequired>
                 <FormLabel>Collection Address</FormLabel>
@@ -64,6 +65,7 @@ export default function Home() {
                 />
               </FormControl>
             </TabPanel>
+            {/* Upload tab */}
             <TabPanel mt={{ base: "0", md: "16" }}>
               <main className={exo.className}>
                 <Flex
@@ -82,7 +84,7 @@ export default function Home() {
                 </Flex>
               </main>
             </TabPanel>
-
+            {/* Details tab */}
             <TabPanel>
               <FormControl mt={3}>
                 <FormLabel>Website URL</FormLabel>

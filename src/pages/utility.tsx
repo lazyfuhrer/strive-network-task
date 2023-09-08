@@ -74,6 +74,7 @@ import {
               </Button>
             </ButtonGroup>
           </Flex>
+          {/* banner box */}
           <Box
             borderRadius={{ base: "36px" }}
             backgroundImage="url('/images/banner.svg')"

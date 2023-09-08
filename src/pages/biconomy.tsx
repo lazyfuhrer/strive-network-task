@@ -18,6 +18,7 @@ export default function Biconomy() {
       spacing={18}
       divider={<StackDivider borderColor="rgba(255, 255, 255, 0.3)" />}
     >
+      {/* first stack */}
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={{ base: 5, md: 10 }}
@@ -74,7 +75,7 @@ export default function Biconomy() {
           </Box>
         </Box>
       </Stack>
-
+      {/* second stack */}
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={{ base: 5, md: 10 }}

@@ -31,6 +31,7 @@ export default function Push() {
         spacing={19}
         divider={<StackDivider borderColor="rgba(255, 255, 255, 0.3)" />}
       >
+        {/* first stack */}
         <Stack direction={{ base: "column", md: "row" }}>
           <Box flex={1} pr={{ base: 0, md: 10 }}>
             <Text fontSize={["20px", "24px"]} fontWeight={700} mb={1}>
@@ -69,7 +70,7 @@ export default function Push() {
             </Flex>
           </Box>
         </Stack>
-
+        {/* second stack */}
         <Stack direction={{ base: "column", md: "row" }}>
           <Box flex={1} pr={{ base: 0, md: 10 }}>
             <Text fontSize={["20px", "24px"]} fontWeight={700} mb={1}>

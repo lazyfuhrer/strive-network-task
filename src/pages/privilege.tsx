@@ -61,6 +61,7 @@ import {
               </Box>
   
               <TabPanels>
+                {/* Utility Info tab */}
                 <TabPanel display="flex" flexDirection="column">
                   <FormControl mt={4}>
                     <Input
@@ -91,11 +92,11 @@ import {
                     Next
                   </Button>
                 </TabPanel>
-  
+                {/* Upload tab */}
                 <TabPanel mt={4}>
                   <BigUpload />
                 </TabPanel>
-  
+                {/* Redeemable Type tab */}
                 <TabPanel mt={2}>
                   <Box>
                     <Flex
