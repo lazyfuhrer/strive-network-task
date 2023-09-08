@@ -23,12 +23,12 @@ export default function BigUpload() {
           w={{ base: "310px", md: "360px" }}
           h={{ base: "300px", md: "340px" }}
           textAlign="center"
-          border={'1px solid rgba(255, 255, 255, 0.3)'}
+          border={"1px solid rgba(255, 255, 255, 0.3)"}
           style={{
             background: `
-                            linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),
-                            linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
-                            `,
+              linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),
+              linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
+            `,
           }}
         >
           <Flex>
@@ -79,7 +79,7 @@ export default function BigUpload() {
               h={{ base: "30px", md: "35px" }}
               leftIcon={<AiOutlinePlusCircle />}
               bg={"rgba(47, 128, 236, 1)"}
-              _hover={{ bg: 'rgba(0, 85, 160, 1)' }}
+              _hover={{ bg: "rgba(0, 85, 160, 1)" }}
             >
               Add File
             </Button>
