@@ -1,5 +1,6 @@
 import { BellColored } from "@/icons/strive";
 import { Avatar, Box, Flex, FlexProps, HStack, IconButton, Image, Input, InputGroup, InputLeftElement, Menu, MenuButton, Text, VStack } from "@chakra-ui/react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { BsSearch } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 
@@ -64,29 +65,16 @@ export default function Navbar ({ onOpen, ...rest }: NavbarProps) {
             <IconButton color={"rgba(2, 170, 176, 1)"} size="xl" variant="ghost" aria-label="open menu" icon={<BellColored />} />
             <Box style={{ position: "absolute", top: "0px", right: "0px", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255, 54, 151, 1)"}}></Box>
           </Box>
-          <Flex alignItems={"center"}>
-            <Menu>
-              <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: "none" }}>
-                <HStack>
-                  <Avatar
-                    size={"sm"}
-                    src={'/icons/avatar.svg'}
-                    showBorder={true}
-                    borderColor={'rgba(2, 170, 176, 1)'}
-                    borderStyle={'dashed'}
-                  />
-                  <VStack
-                    display={{ base: "none", md: "flex" }}
-                    alignItems="flex-start"
-                    spacing="1px"
-                    ml="2"
-                  >
-                    <Text fontSize="sm" fontWeight={600}>23741....awo83</Text>
-                  </VStack>
-                </HStack>
-              </MenuButton>
-            </Menu>
-          </Flex>
+
+          <ConnectButton 
+            label="Sign in"
+            showBalance={false}
+            accountStatus={{
+              smallScreen: 'avatar',
+              largeScreen: 'full',
+            }}
+          />
+        
         </HStack>
       </Flex>
   );
