@@ -4,6 +4,7 @@ import {
     Divider,
     Flex,
     FormControl,
+    Icon,
     IconButton,
     Input,
     Select,
@@ -19,9 +20,47 @@ import {
   } from "@chakra-ui/react";
   import { CloseIcon, InfoIcon } from "@chakra-ui/icons";
   import { IoIosArrowDropdown } from "react-icons/io";
-  import BigUpload from "@/components/BigUpload";
+  import { useState } from "react";
+  import { motion } from "framer-motion";
+  import moment from 'moment-timezone';
+import { FiUpload } from "react-icons/fi";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Exo } from "next/font/google";
+
+  const exo = Exo({ subsets: ["latin"] });
   
   export default function Privilege() {
+
+    const [formData, setFormData] = useState({
+      utilityName: "",
+      utilityDescription: "",
+      isRedeemableTypeChecked: false,
+      isExpiryTypeChecked: false,
+      redeemableTypeValue: "",
+      dateTimeValue: "",
+      timezoneValue: "",
+      selectedCategoryValue: "",
+    });
+  
+    const allTimezones: string[] = moment.tz.names();
+  
+    const handleRedeemableTypeChange = () => {
+      setFormData((prevData) => ({
+        ...prevData,
+        isRedeemableTypeChecked: !prevData.isRedeemableTypeChecked,
+      }));
+    };
+  
+    const handleExpiryTypeChange = () => {
+      setFormData((prevData) => ({
+        ...prevData,
+        isExpiryTypeChecked: !prevData.isExpiryTypeChecked,
+      }));
+    };
+  
+    const handleSubmit = () => {
+      console.log("FormData:", formData);
+    };
     return (
       <>
         <Flex justify={"center"} pt={10}>
@@ -68,6 +107,13 @@ import {
                       border={"1.5px solid rgba(255, 255, 255, 1)"}
                       placeholder="Utility Name"
                       _placeholder={{ color: "rgba(255, 255, 255, 1)" }}
+                      value={formData.utilityName}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          utilityName: e.target.value,
+                        })
+                      }
                     />
                   </FormControl>
                   <FormControl mt={8} isRequired>
@@ -77,6 +123,13 @@ import {
                       placeholder="Utility Description"
                       resize="vertical"
                       rows={5}
+                      value={formData.utilityDescription}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          utilityDescription: e.target.value,
+                        })
+                      }
                     />
                   </FormControl>
                   <Button
@@ -94,54 +147,226 @@ import {
                 </TabPanel>
                 {/* Upload tab */}
                 <TabPanel mt={4}>
-                  <BigUpload />
+                  <main className={exo.className}>
+                    <Flex
+                      justifyContent="center"
+                      alignItems="center"
+                      h={{ base: "300px", md: "320px" }}
+                    >
+                      <Box
+                        display={"flex"}
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        flexDirection={"column"}
+                        borderRadius={"24px"}
+                        w={{ base: "310px", md: "360px" }}
+                        h={{ base: "300px", md: "340px" }}
+                        textAlign="center"
+                        border={"1px solid rgba(255, 255, 255, 0.3)"}
+                        style={{
+                          background: `
+                            linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%),
+                            linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
+                          `,
+                        }}
+                      >
+                        <Flex>
+                          <Icon
+                            as={FiUpload}
+                            w={{ base: "25px", md: "29px" }}
+                            h={{ base: "25px", md: "29px" }}
+                            mr={{ base: "10px", md: "15px" }}
+                          />
+                          <Text fontSize={{ base: "18px", md: "20px" }} fontWeight={600}>
+                            Upload your file
+                          </Text>
+                        </Flex>
+                        <Box
+                          border="2px dashed rgba(47, 128, 236, 1)"
+                          mt={6}
+                          mx={"auto"}
+                          width={"80%"}
+                          h={"140px"}
+                          borderRadius={"24px"}
+                          display="flex"
+                          flexDirection="column"
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Text
+                            color={"rgba(47, 128, 236, 1)"}
+                            mb={2}
+                            fontSize={{ base: "13px", md: "16px" }}
+                            fontWeight={500}
+                          >
+                            Drag or Drop files here
+                          </Text>
+                          <Text
+                            color={"rgba(47, 128, 236, 1)"}
+                            mb={2}
+                            fontSize={{ base: "10px", md: "12px" }}
+                            fontWeight={500}
+                          >
+                            OR
+                          </Text>
+                          <Button
+                            display="flex"
+                            alignItems={"center"}
+                            fontSize={{ base: "13px", md: "16px" }}
+                            variant={"unstyled"}
+                            w={{ base: "110px", md: "128px" }}
+                            h={{ base: "30px", md: "35px" }}
+                            leftIcon={<AiOutlinePlusCircle />}
+                            bg={"rgba(47, 128, 236, 1)"}
+                            _hover={{ bg: "rgba(0, 85, 160, 1)" }}
+                          >
+                            Add File
+                          </Button>
+                        </Box>
+                        <Box mt={6}>
+                          <Text
+                            mb={2}
+                            fontSize={{ base: "10px", md: "12px" }}
+                            fontWeight={500}
+                          >
+                            Supported files - JPG, PNG, GIF
+                          </Text>
+                          <Text fontSize={{ base: "10px", md: "12px" }} fontWeight={500}>
+                            Please select a file to import the collections
+                          </Text>
+                        </Box>
+                      </Box>
+                    </Flex>
+                    <Flex justifyContent={{ base: "center", md: "flex-end" }} mt={7}>
+                      <Button
+                        variant="unstyled"
+                        bg={"rgba(2, 170, 176, 1)"}
+                        _hover={{ bg: "rgba(0, 120, 126, 1)" }}
+                        w={"180px"}
+                        h={"46px"}
+                        fontSize={"20px"}
+                      >
+                        Next
+                      </Button>
+                    </Flex>
+                  </main>
                 </TabPanel>
                 {/* Redeemable Type tab */}
                 <TabPanel mt={2}>
                   <Box>
-                    <Flex
-                      justifyContent="space-between"
-                      alignItems="center"
-                      mb={4}
-                    >
-                      <Text fontSize={{ base: "20px", md: "22px" }}>
-                        Redeemable Type{" "}
-                        <Tooltip
-                          label="Redeemable Type"
-                          fontSize={{ base: "sm", md: "md" }}
+                    <Box>
+                      <Flex justifyContent="space-between" alignItems="center" mb={4}>
+                        <Text fontSize={{ base: "20px", md: "22px" }}>
+                          Redeemable Type{" "}
+                          <Tooltip
+                            label="Redeemable Type"
+                            fontSize={{ base: "sm", md: "md" }}
+                          >
+                            <InfoIcon
+                              color={"rgba(2, 170, 176, 1)"}
+                              w={{ base: 3, md: 4 }}
+                              h={{ base: 3, md: 4 }}
+                            />
+                          </Tooltip>
+                        </Text>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
                         >
-                          <InfoIcon
-                            color={"rgba(2, 170, 176, 1)"}
-                            w={{ base: 3, md: 4 }}
-                            h={{ base: 3, md: 4 }}
+                          <Switch
+                            size={{ base: "md", md: "lg" }}
+                            color="rgba(2, 170, 176, 1)"
+                            isChecked={formData.isRedeemableTypeChecked}
+                            onChange={handleRedeemableTypeChange}
                           />
-                        </Tooltip>
-                      </Text>
-                      <Switch
-                        size={{ base: "md", md: "lg" }}
-                        color="rgba(2, 170, 176, 1)"
-                      />
-                    </Flex>
+                        </motion.div>
+                      </Flex>
+                      {formData.isRedeemableTypeChecked && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <Input
+                            mb={4}
+                            placeholder="Max redeem"
+                            value={formData.redeemableTypeValue}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                redeemableTypeValue: e.target.value,
+                              })
+                            }
+                          />
+                        </motion.div>
+                      )}
+                    </Box>
   
-                    <Flex justifyContent="space-between" alignItems="center">
-                      <Text fontSize={{ base: "20px", md: "22px" }}>
-                        Expiry Type{" "}
-                        <Tooltip
-                          label="Expiry Type"
-                          fontSize={{ base: "sm", md: "md" }}
+                    <Box>
+                      <Flex justifyContent="space-between" alignItems="center">
+                        <Text fontSize={{ base: "20px", md: "22px" }}>
+                          Expiry Type{" "}
+                          <Tooltip
+                            label="Expiry Type"
+                            fontSize={{ base: "sm", md: "md" }}
+                          >
+                            <InfoIcon
+                              color={"rgba(2, 170, 176, 1)"}
+                              w={{ base: 3, md: 4 }}
+                              h={{ base: 3, md: 4 }}
+                            />
+                          </Tooltip>
+                        </Text>
+                        <Switch
+                          size={{ base: "md", md: "lg" }}
+                          color="rgba(2, 170, 176, 1)"
+                          isChecked={formData.isExpiryTypeChecked}
+                          onChange={handleExpiryTypeChange}
+                        />
+                      </Flex>
+                      {formData.isExpiryTypeChecked && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
                         >
-                          <InfoIcon
-                            color={"rgba(2, 170, 176, 1)"}
-                            w={{ base: 3, md: 4 }}
-                            h={{ base: 3, md: 4 }}
-                          />
-                        </Tooltip>
-                      </Text>
-                      <Switch
-                        size={{ base: "md", md: "lg" }}
-                        color="rgba(2, 170, 176, 1)"
-                      />
-                    </Flex>
+                          <Flex mt={4}>
+                            <Input
+                              mr={5}
+                              placeholder="Date & Time"
+                              type="datetime-local"
+                              value={formData.dateTimeValue}
+                              onChange={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  dateTimeValue: e.target.value,
+                                })
+                              }
+                            />
+                            <Select
+                              value={formData.timezoneValue}
+                              placeholder={'Timezone'}
+                              onChange={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  timezoneValue: e.target.value,
+                                })
+                              }
+                            >
+                              {allTimezones.map((timezone) => (
+                                <option key={timezone} value={timezone}>
+                                  {timezone}
+                                </option>
+                              ))}
+                            </Select>
+                          </Flex>
+                        </motion.div>
+                      )}
+                    </Box>
   
                     <Box>
                       <Text fontSize={{ base: "20px", md: "22px" }} mt={4}>
@@ -152,35 +377,26 @@ import {
                         icon={<IoIosArrowDropdown />}
                         mt={4}
                         placeholder="Select"
+                        value={formData.selectedCategoryValue}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            selectedCategoryValue: e.target.value,
+                          })
+                        }
                       >
-                        <option
-                          value="option1"
-                          style={{
-                            backgroundColor: "rgba(0, 0, 0, 1)",
-                            height: "56px",
-                            width: "602px",
-                          }}
-                        >
-                          Category
-                        </option>
-                        <option
-                          value="option2"
-                          style={{
-                            backgroundColor: "rgba(0, 0, 0, 1)",
-                            height: "40px",
-                          }}
-                        >
-                          Category
-                        </option>
-                        <option
-                          value="option3"
-                          style={{
-                            backgroundColor: "rgba(0, 0, 0, 1)",
-                            height: "40px",
-                          }}
-                        >
-                          Category
-                        </option>
+                        {[1, 2, 3].map((index) => (
+                          <option
+                            key={index}
+                            value={`Category ${index}`}
+                            style={{
+                              backgroundColor: "rgba(0, 0, 0, 1)",
+                              height: "40px",
+                            }}
+                          >
+                            Category {index}
+                          </option>
+                        ))}
                       </Select>
                     </Box>
   
@@ -195,6 +411,7 @@ import {
                         w={"180px"}
                         h={"46px"}
                         fontSize={"20px"}
+                        onClick={handleSubmit}
                       >
                         Submit
                       </Button>
