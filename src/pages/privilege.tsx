@@ -106,6 +106,10 @@ export default function Privilege() {
       formData.timezoneValue = "";
       datetimeInteger = 0;
     }
+    if (formData.isExpiryTypeChecked && (formData.dateTimeValue==="" || formData.timezoneValue==="")) {
+      alert("Please select a valid date and time and timezone");
+      return;
+    }
     if (write && !isLoadingOne) {
       write({ args: [Number(dataOne)+1, formData.utilityName, formData.isExpiryTypeChecked, datetimeInteger, formData.redeemableTypeValue] });
     }
