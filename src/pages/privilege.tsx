@@ -22,7 +22,7 @@ import {
   } from "@chakra-ui/react";
   import { CloseIcon, InfoIcon } from "@chakra-ui/icons";
   import { IoIosArrowDropdown } from "react-icons/io";
-  import { useState } from "react";
+  import { ChangeEvent, useRef, useState } from "react";
   import { motion } from "framer-motion";
   import moment from 'moment-timezone';
   import { FiUpload } from "react-icons/fi";
@@ -35,14 +35,31 @@ import {
   
   export default function Privilege() {
 
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    const handleAddFileClick = () => {
+      if (fileInputRef.current) {
+        fileInputRef.current.click();
+      }
+    };
+
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const selectedFile = e.target.files && e.target.files[0];
+      if (selectedFile) {
+        const imageUrl = URL.createObjectURL(selectedFile);
+        setSelectedImage(imageUrl);
+      }
+    };
+
     const { data: dataOne, isError: isErrorOne , isLoading: isLoadingOne } = useContractRead({
-      address: '0x3DC6a989b4F7bEA280C98eE3D6D4F8dE28F192a8',
+      address: '0x9374Ee17b0F4E7fE865Ef1523EFb49c51890f86f',
       abi: utilityContractABI,
       functionName: 'getUtilityCount',
     })
 
     const { data: dataTwo, isLoading: isLoadingTwo , isSuccess: isSuccessTwo , write } = useContractWrite({
-      address: '0x3DC6a989b4F7bEA280C98eE3D6D4F8dE28F192a8',
+      address: '0x9374Ee17b0F4E7fE865Ef1523EFb49c51890f86f',
       abi: utilityContractABI,
       functionName: 'addUtility',
     })
@@ -175,6 +192,16 @@ import {
                       alignItems="center"
                       h={{ base: "300px", md: "320px" }}
                     >
+                      {selectedImage ? (
+                        <Box
+                          w={{ base: "310px", md: "360px" }}
+                          h={{ base: "300px", md: "340px" }}
+                          borderRadius="24px"
+                          bgImage={`url(${selectedImage})`}
+                          bgSize="cover"
+                          bgPosition="center"
+                        />
+                      ) : (
                       <Box
                         display={"flex"}
                         justifyContent={"center"}
@@ -231,6 +258,13 @@ import {
                           >
                             OR
                           </Text>
+                          <Input
+                            type="file"
+                            accept=".jpg, .png, .gif"
+                            ref={fileInputRef}
+                            style={{ display: "none" }}
+                            onChange={handleFileChange}
+                          />
                           <Button
                             display="flex"
                             alignItems={"center"}
@@ -241,6 +275,7 @@ import {
                             leftIcon={<AiOutlinePlusCircle />}
                             bg={"rgba(47, 128, 236, 1)"}
                             _hover={{ bg: "rgba(0, 85, 160, 1)" }}
+                            onClick={handleAddFileClick}
                           >
                             Add File
                           </Button>
@@ -258,6 +293,7 @@ import {
                           </Text>
                         </Box>
                       </Box>
+                      )}
                     </Flex>
                     <Flex justifyContent={{ base: "center", md: "flex-end" }} mt={7}>
                       <Button
