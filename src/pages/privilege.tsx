@@ -35,6 +35,11 @@ import {
   
   export default function Privilege() {
 
+    const [activeTab, setActiveTab] = useState<number>(0);
+    const handleNextTab = () => {
+      setActiveTab((prevTab) => prevTab + 1);
+    };
+
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -110,6 +115,7 @@ import {
             border={"1px"}
             borderRadius={"16px"}
             size={"md"}
+            index={activeTab}
           >
             <Box
               p={3}
@@ -126,13 +132,13 @@ import {
             <Box p={"8"}>
               <Box>
                 <TabList gap={{ base: "25px", md: "35px" }}>
-                  <Tab fontSize={"12px"} fontWeight={600}>
+                  <Tab fontSize={"12px"} fontWeight={600} onClick={()=> setActiveTab(0)}>
                     Utility Info
                   </Tab>
-                  <Tab fontSize={"12px"} fontWeight={600}>
+                  <Tab fontSize={"12px"} fontWeight={600} onClick={()=> setActiveTab(1)}>
                     Upload
                   </Tab>
-                  <Tab fontSize={"12px"} fontWeight={600}>
+                  <Tab fontSize={"12px"} fontWeight={600} onClick={()=> setActiveTab(2)}>
                     Redeemable Type
                   </Tab>
                 </TabList>
@@ -180,6 +186,7 @@ import {
                     h={"46px"}
                     fontSize={"20px"}
                     alignSelf={{ base: "center", md: "flex-end" }}
+                    onClick={handleNextTab}
                   >
                     Next
                   </Button>
@@ -303,6 +310,7 @@ import {
                         w={"180px"}
                         h={"46px"}
                         fontSize={"20px"}
+                        onClick={handleNextTab}
                       >
                         Next
                       </Button>
