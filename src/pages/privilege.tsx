@@ -7,6 +7,8 @@ import {
     Icon,
     IconButton,
     Input,
+    NumberInput,
+    NumberInputField,
     Select,
     Switch,
     Tab,
@@ -23,21 +25,35 @@ import {
   import { useState } from "react";
   import { motion } from "framer-motion";
   import moment from 'moment-timezone';
-import { FiUpload } from "react-icons/fi";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import { Exo } from "next/font/google";
+  import { FiUpload } from "react-icons/fi";
+  import { AiOutlinePlusCircle } from "react-icons/ai";
+  import { Exo } from "next/font/google";
+  import { useContractRead, useContractWrite } from "wagmi";
+  import utilityContractABI from "../abis/UtilityContract.json";
 
   const exo = Exo({ subsets: ["latin"] });
   
   export default function Privilege() {
+
+    const { data: dataOne, isError: isErrorOne , isLoading: isLoadingOne } = useContractRead({
+      address: '0x3DC6a989b4F7bEA280C98eE3D6D4F8dE28F192a8',
+      abi: utilityContractABI,
+      functionName: 'getUtilityCount',
+    })
+
+    const { data: dataTwo, isLoading: isLoadingTwo , isSuccess: isSuccessTwo , write } = useContractWrite({
+      address: '0x3DC6a989b4F7bEA280C98eE3D6D4F8dE28F192a8',
+      abi: utilityContractABI,
+      functionName: 'addUtility',
+    })
 
     const [formData, setFormData] = useState({
       utilityName: "",
       utilityDescription: "",
       isRedeemableTypeChecked: false,
       isExpiryTypeChecked: false,
-      redeemableTypeValue: "",
-      dateTimeValue: "",
+      redeemableTypeValue: 0,
+      dateTimeValue: 'string',
       timezoneValue: "",
       selectedCategoryValue: "",
     });
@@ -59,8 +75,14 @@ import { Exo } from "next/font/google";
     };
   
     const handleSubmit = () => {
-      console.log("FormData:", formData);
+      const datetimeMoment = moment.tz(formData.dateTimeValue, formData.timezoneValue);
+      const formattedDatetime = datetimeMoment.format('YYYYMMDDHHmmss');
+      const datetimeInteger = parseInt(formattedDatetime);
+      if (write && !isLoadingOne) {
+        write({ args: [Number(dataOne)+1, formData.utilityName, formData.isRedeemableTypeChecked, datetimeInteger, formData.redeemableTypeValue] });
+      }
     };
+
     return (
       <>
         <Flex justify={"center"} pt={10}>
@@ -290,17 +312,13 @@ import { Exo } from "next/font/google";
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <Input
+                          <NumberInput
                             mb={4}
-                            placeholder="Max redeem"
                             value={formData.redeemableTypeValue}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                redeemableTypeValue: e.target.value,
-                              })
-                            }
-                          />
+                            onChange={(value) => setFormData({ ...formData, redeemableTypeValue: parseInt(value) || 0 })}
+                          >
+                            <NumberInputField placeholder="Max redeem" />
+                          </NumberInput>
                         </motion.div>
                       )}
                     </Box>
@@ -411,6 +429,7 @@ import { Exo } from "next/font/google";
                         w={"180px"}
                         h={"46px"}
                         fontSize={"20px"}
+                        disabled={!write}
                         onClick={handleSubmit}
                       >
                         Submit

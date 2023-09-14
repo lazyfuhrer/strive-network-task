@@ -1,5 +1,5 @@
 import { BellColored } from "@/icons/strive";
-import { Avatar, Box, Flex, FlexProps, HStack, IconButton, Image, Input, InputGroup, InputLeftElement, Menu, MenuButton, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, FlexProps, HStack, IconButton, Image, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { BsSearch } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
@@ -65,7 +65,7 @@ export default function Navbar ({ onOpen, ...rest }: NavbarProps) {
             <IconButton color={"rgba(2, 170, 176, 1)"} size="xl" variant="ghost" aria-label="open menu" icon={<BellColored />} />
             <Box style={{ position: "absolute", top: "0px", right: "0px", width: "5px", height: "5px", borderRadius: "50%", background: "rgba(255, 54, 151, 1)"}}></Box>
           </Box>
-
+          {/* Rainbowkit connect wallet button */}
           <ConnectButton 
             label="Sign in"
             showBalance={false}
@@ -74,7 +74,6 @@ export default function Navbar ({ onOpen, ...rest }: NavbarProps) {
               largeScreen: 'full',
             }}
           />
-        
         </HStack>
       </Flex>
   );

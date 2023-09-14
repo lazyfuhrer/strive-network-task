@@ -39,7 +39,7 @@ const wagmiConfig = createConfig({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} theme={darkTheme({
+      <RainbowKitProvider coolMode chains={chains} theme={darkTheme({
         accentColor: 'rgba(0, 120, 126, 1)',
         fontStack: 'system',
         overlayBlur: 'small',

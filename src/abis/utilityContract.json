@@ -1,0 +1,163 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "utilityId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "utilityName",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "expirable",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "expiry",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "redeem_limit",
+				"type": "uint256"
+			}
+		],
+		"name": "UtilityAdded",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_utilityId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_utilityName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_expirable",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_expiry",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_redeemLimit",
+				"type": "uint256"
+			}
+		],
+		"name": "addUtility",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getUtility",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "utilityId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "utilityName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "expirable",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expiry",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "redeem_limit",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getUtilityCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "utilities",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "utilityId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "utilityName",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "expirable",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expiry",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "redeem_limit",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
