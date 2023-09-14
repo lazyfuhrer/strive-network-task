@@ -75,7 +75,7 @@ import {
       isRedeemableTypeChecked: false,
       isExpiryTypeChecked: false,
       redeemableTypeValue: 0,
-      dateTimeValue: 'string',
+      dateTimeValue: "",
       timezoneValue: "",
       selectedCategoryValue: "",
     });
@@ -358,7 +358,7 @@ import {
                         >
                           <NumberInput
                             mb={4}
-                            value={formData.redeemableTypeValue}
+                            defaultValue={formData.redeemableTypeValue}
                             onChange={(value) => setFormData({ ...formData, redeemableTypeValue: parseInt(value) || 0 })}
                           >
                             <NumberInputField placeholder="Max redeem" />
