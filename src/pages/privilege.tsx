@@ -109,7 +109,6 @@ export default function Privilege() {
     if (write && !isLoadingOne) {
       write({ args: [Number(dataOne)+1, formData.utilityName, formData.isExpiryTypeChecked, datetimeInteger, formData.redeemableTypeValue] });
     }
-    console.log(datetimeInteger, formData.isExpiryTypeChecked, formData.dateTimeValue, formData.timezoneValue);
   };
 
   return (
