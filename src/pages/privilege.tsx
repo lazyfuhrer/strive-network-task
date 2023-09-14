@@ -100,9 +100,12 @@ export default function Privilege() {
   const handleSubmit = () => {
     const datetimeMoment = moment.tz(formData.dateTimeValue, formData.timezoneValue);
     const formattedDatetime = datetimeMoment.format('YYYYMMDDHHmmss');
-    const datetimeInteger = parseInt(formattedDatetime);
+    let datetimeInteger = parseInt(formattedDatetime);
+    if (isNaN(datetimeInteger)) {
+      datetimeInteger = 0;
+    }
     if (write && !isLoadingOne) {
-      write({ args: [Number(dataOne)+1, formData.utilityName, formData.isRedeemableTypeChecked, datetimeInteger, formData.redeemableTypeValue] });
+      write({ args: [Number(dataOne)+1, formData.utilityName, formData.isExpiryTypeChecked, datetimeInteger, formData.redeemableTypeValue] });
     }
   };
 
