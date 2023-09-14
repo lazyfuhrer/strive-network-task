@@ -109,7 +109,6 @@ export default function Home() {
               </FormControl>
               <Center>
                 <Button
-                  variant="unstyled"
                   mt={10}
                   bg={"rgba(2, 170, 176, 1)"}
                   _hover={{ bg: "rgba(0, 120, 126, 1)" }}

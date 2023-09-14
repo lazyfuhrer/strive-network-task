@@ -179,7 +179,6 @@ export default function Privilege() {
                   />
                 </FormControl>
                 <Button
-                  variant="unstyled"
                   bg={"rgba(2, 170, 176, 1)"}
                   _hover={{ bg: "rgba(0, 120, 126, 1)" }}
                   mt={28}
@@ -277,7 +276,6 @@ export default function Privilege() {
                           display="flex"
                           alignItems={"center"}
                           fontSize={{ base: "13px", md: "16px" }}
-                          variant={"unstyled"}
                           w={{ base: "110px", md: "128px" }}
                           h={{ base: "30px", md: "35px" }}
                           leftIcon={<AiOutlinePlusCircle />}
@@ -305,7 +303,6 @@ export default function Privilege() {
                   </Flex>
                   <Flex justifyContent={{ base: "center", md: "flex-end" }} mt={7}>
                     <Button
-                      variant="unstyled"
                       bg={"rgba(2, 170, 176, 1)"}
                       _hover={{ bg: "rgba(0, 120, 126, 1)" }}
                       w={"180px"}
