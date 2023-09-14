@@ -468,7 +468,7 @@ export default function Privilege() {
                     mt={24}
                   >
                     <Button
-                      variant="unstyled"
+                      isLoading={isLoadingTwo}
                       bg="rgba(2, 170, 176, 1)"
                       _hover={{ bg: "rgba(0, 120, 126, 1)" }}
                       w={"180px"}
