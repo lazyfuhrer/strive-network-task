@@ -101,7 +101,9 @@ export default function Privilege() {
     const datetimeMoment = moment.tz(formData.dateTimeValue, formData.timezoneValue);
     const formattedDatetime = datetimeMoment.format('YYYYMMDDHHmmss');
     let datetimeInteger = parseInt(formattedDatetime);
-    if (isNaN(datetimeInteger)) {
+    if (formData.isExpiryTypeChecked===false) {
+      formData.dateTimeValue = "";
+      formData.timezoneValue = "";
       datetimeInteger = 0;
     }
     if (write && !isLoadingOne) {
