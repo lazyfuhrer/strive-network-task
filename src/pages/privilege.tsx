@@ -30,6 +30,7 @@ import {
   import { Exo } from "next/font/google";
   import { useContractRead, useContractWrite } from "wagmi";
   import utilityContractABI from "../abis/utilityContract.json";
+  import { contractAddress } from "@/utils/contractConfig";
 
   const exo = Exo({ subsets: ["latin"] });
   
@@ -58,13 +59,13 @@ import {
     };
 
     const { data: dataOne, isError: isErrorOne , isLoading: isLoadingOne } = useContractRead({
-      address: '0x9374Ee17b0F4E7fE865Ef1523EFb49c51890f86f',
+      address: contractAddress,
       abi: utilityContractABI,
       functionName: 'getUtilityCount',
     })
 
     const { data: dataTwo, isLoading: isLoadingTwo , isSuccess: isSuccessTwo , write } = useContractWrite({
-      address: '0x9374Ee17b0F4E7fE865Ef1523EFb49c51890f86f',
+      address: contractAddress,
       abi: utilityContractABI,
       functionName: 'addUtility',
     })
