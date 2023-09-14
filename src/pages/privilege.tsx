@@ -29,7 +29,7 @@ import {
   import { AiOutlinePlusCircle } from "react-icons/ai";
   import { Exo } from "next/font/google";
   import { useContractRead, useContractWrite } from "wagmi";
-  import utilityContractABI from "../abis/UtilityContract.json";
+  import utilityContractABI from "../../contracts/UtilityContract.json";
 
   const exo = Exo({ subsets: ["latin"] });
   
