@@ -13,43 +13,43 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    { name: 'Profile', icon: Profile, to: '/' },
-    { name: 'Push Notifications', icon: Bell, to: '/push' },
-    { name: 'Gas Fee', icon: Fire, to: '/biconomy' },
-    { name: 'Utilities Launchpad', icon: Rocket, to: '/utility' },
-    { name: 'Add Utility', icon: Plus, to: '/privilege' },
-    { name: 'Analytics', icon: Analytics, to: '/analytics' },
-    { name: 'Logout', icon: LogOut, to: '/logout' },
+  { name: 'Profile', icon: Profile, to: '/' },
+  { name: 'Push Notifications', icon: Bell, to: '/push' },
+  { name: 'Gas Fee', icon: Fire, to: '/biconomy' },
+  { name: 'Utilities Launchpad', icon: Rocket, to: '/utility' },
+  { name: 'Add Utility', icon: Plus, to: '/privilege' },
+  { name: 'Analytics', icon: Analytics, to: '/analytics' },
+  { name: 'Logout', icon: LogOut, to: '/logout' },
 ]
 
 export default function SidebarContent ({ onClose, ...rest }: SidebarProps) {
-    const router = useRouter();
-    const isActive = (pathname : string) => router.pathname === pathname;
-    return (
-      <Box
-        position="fixed"
-        top={0}
-        left={0}
-        bottom={0}
-        zIndex={10}
-        transition="3s ease"
-        bg="#0A0C17"
-        w={{ base: 'full', md: 60 }}
-        h="100vh"
-        mt={{ base: 0, md: 20 }}
-        style={{
-          borderRight: '0.5px solid rgba(255, 255, 255, 0.3)'
-        }}
-        {...rest}
-      >
-        <Flex h={{base: '20', md: '5'}} alignItems="center" mx="8" justifyContent="space-between">
-          <CloseButton color={'rgba(2, 170, 176, 1)'} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
-        </Flex>
-        {LinkItems.map((link) => (
-          <NavItem key={link.name} icon={link.icon} to={link.to} bg={isActive(link.to) ? '#0A1E2F' : ''}>
-            {link.name}
-          </NavItem>
-        ))}
-      </Box>
-    );
+  const router = useRouter();
+  const isActive = (pathname : string) => router.pathname === pathname;
+  return (
+    <Box
+      position="fixed"
+      top={0}
+      left={0}
+      bottom={0}
+      zIndex={10}
+      transition="3s ease"
+      bg="#0A0C17"
+      w={{ base: 'full', md: 60 }}
+      h="100vh"
+      mt={{ base: 0, md: 20 }}
+      style={{
+        borderRight: '0.5px solid rgba(255, 255, 255, 0.3)'
+      }}
+      {...rest}
+    >
+      <Flex h={{base: '20', md: '5'}} alignItems="center" mx="8" justifyContent="space-between">
+        <CloseButton color={'rgba(2, 170, 176, 1)'} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+      </Flex>
+      {LinkItems.map((link) => (
+        <NavItem key={link.name} icon={link.icon} to={link.to} bg={isActive(link.to) ? '#0A1E2F' : ''}>
+          {link.name}
+        </NavItem>
+      ))}
+    </Box>
+  );
 };
