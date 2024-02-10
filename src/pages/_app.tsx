@@ -13,7 +13,7 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const quicksand = Quicksand({ subsets: ['latin'] })
 
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <main className={quicksand.className}>
             <Layout>
               <Component {...pageProps} />
-              <GoogleAnalytics gaId="G-EY818BTBEP" />
+              <GoogleTagManager gtmId="GTM-WJM75TP7" />
             </Layout>
           </main>
         </ChakraProvider>
